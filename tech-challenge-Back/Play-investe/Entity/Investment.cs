@@ -1,6 +1,8 @@
 ﻿using Play_investe.DTO;
 using Play_investe.Enums;
 using Play_investe.Entity;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
+using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 
 namespace Play_investe.Entity
 {
@@ -18,16 +20,26 @@ namespace Play_investe.Entity
 
         public Investment() { }
 
-        public Investment(SaveInvestmentDTO saveInvestimentDto)
+        public Investment(DateTime dueDate, float value, Bound bound, Account account)
         {
             
-            Value = saveInvestimentDto.Value;          
-            DueDate = saveInvestimentDto.AvailabilityDate;
-            AquisitionDate = saveInvestimentDto.AquisitionDate;
-            CreatedDate = DateTime.Now;
+            Value = value;
+            DueDate = dueDate;
+            AquisitionDate = DateTime.Now;           
+            IdAccount = account.Id;
+            IdBound = bound.Id;
+            Bound = bound;
+            Account = account;
+            UpdateAmount(value);
 
+        }
 
-        }      
+        private void UpdateAmount(float value)
+        {            
+            Amount += value;
+        }
+
+       
 
 
 

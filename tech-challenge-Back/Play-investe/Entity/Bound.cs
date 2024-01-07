@@ -10,18 +10,23 @@ namespace Play_investe.Entity
         public bool AvailableForWithdrawal { get; set; } = false;
         public List<Investment> Investments { get; set; }
         public string Type { get; set; }
-        public float Index { get; set; }
+        public string? Index { get; set; }
         public float Percent { get; set; }
+    
 
         public Bound() { }
-        public Bound(LiquidityType liquidityType,  float index, float percent)
+        public Bound(LiquidityType liquidityType,  string index, float percent)
         {
             LiquidityType = liquidityType;
             Index = index;
-            Percent = percent;
-            CreatedDate = DateTime.Now;
+            Percent = percent;                 
+            
+            if(liquidityType == 0)
+            {
+                AvailableForWithdrawal = true;
+            }
 
-            if (index < 0)
+            if (index.Length > 0)
             {
                  Type = "Indexed Bound";
             }

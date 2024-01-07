@@ -13,8 +13,8 @@ namespace Play_investe.Configurations
 
             builder.Property(b => b.LiquidityType).IsRequired();
             builder.Property(b => b.AvailableForWithdrawal).HasColumnType("BIT").IsRequired();
-            builder.Property(b => b.Type).HasColumnType("VARCHAR(50)").IsRequired();
-            builder.Property(b => b.Index).HasColumnType("FLOAT").IsRequired();
+            builder.Property(b => b.Type).HasColumnType("VARCHAR(50)").IsRequired();           
+            builder.Property(b => b.Index).HasColumnType("VARCHAR(50)").IsRequired();
             builder.Property(b => b.Percent).HasColumnType("FLOAT").IsRequired();
 
 

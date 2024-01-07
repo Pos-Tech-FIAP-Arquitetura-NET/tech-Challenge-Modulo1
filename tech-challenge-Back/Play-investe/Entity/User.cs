@@ -45,10 +45,8 @@ namespace Play_investe.Entity
             DateOfIssue = saveUserDTO.DateOfIssue;
             Password = passwordHasher.HashPassword(saveUserDTO.Password);
             Permitions = saveUserDTO.Permitions;
-            IsActived = true;
-            CreatedDate = DateTime.Now;
-            
-            
+            IsActived = true;      
+                        
         }
 
         public void DesactiveUser(int id)
@@ -57,10 +55,12 @@ namespace Play_investe.Entity
             DesactivedDate = DateTime.Now;
         }
 
-        public void ChangeUserPassword(string NewPassword, PasswordHasherService passwordHasher)
+        public string ChangeUserPassword(string NewPassword, PasswordHasherService passwordHasher)
         {
             Password = passwordHasher.HashPassword(NewPassword);
             UpdatedDate = DateTime.Now;
+
+            return passwordHasher.HashPassword(NewPassword);
         }
 
 

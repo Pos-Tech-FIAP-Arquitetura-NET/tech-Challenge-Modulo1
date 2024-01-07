@@ -32,8 +32,7 @@ namespace Play_investe.Entity
         public Account(int iduser)
         {
             AccountNumber = this.GenerateAccountNumber();
-            IdUser = iduser;
-            CreatedDate = DateTime.Now;
+            IdUser = iduser;  
             WithdrawalAvailabilityDate = DateTime.Now;
 
         }

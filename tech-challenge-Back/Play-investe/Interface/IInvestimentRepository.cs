@@ -5,5 +5,7 @@ namespace Play_investe.Interface
 {
     public interface IInvestimentRepository : IRepository<Investment>
     {
+
+        public Investment GetInvestment(int id);
     }
 }

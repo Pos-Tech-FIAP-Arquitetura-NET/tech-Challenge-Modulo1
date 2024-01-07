@@ -10,5 +10,13 @@ namespace Play_investe.Repository
         {
 
         }
+
+        public Investment GetInvestment(int Id)
+        {
+            var investment = _context.Investment.FirstOrDefault(x => x.IdAccount == Id);
+
+
+            return investment;
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace Play_investe.Repository
             _passwordHasher = passwordHasher;
         }
 
-       
+
         /// <summary>
         /// Faz a verificação das credenciais passadas e retorna o usuário.
         /// </summary>
@@ -25,14 +25,17 @@ namespace Play_investe.Repository
         /// <param name="password"></param>
         /// <returns></returns>
         public User ValidatedCredential(string email, string password)
-        {   
-            var user = _context.User.FirstOrDefault(user => user.Email == email);
+        {
+            var user = _context.User.FirstOrDefault(u => u.Email == email);
 
-            bool isValidCredentials = _passwordHasher.VerifyPassword(user.Password, password);
-                if(isValidCredentials)
+            if (user != null)
+            {
+                bool isValidCredentials = _passwordHasher.VerifyPassword(user.Password, password);
+                if (isValidCredentials)
                 {
-                return user;
+                    return user;
                 }
+            }
 
             return null;
         }
@@ -65,10 +68,14 @@ namespace Play_investe.Repository
         /// <returns></returns>
         public User GetUserByEmail(string email)
         {
-            var user = _context.User.FirstOrDefault(user => user.Email == email && user.IsActived == true);
+            var user = _context.User.FirstOrDefault(user => user.Email == email);
 
-            return user ?? throw new ArgumentException("Usuário não encontrado!");
+            return user;  
         }
+
+       
+
+
 
     }
 }

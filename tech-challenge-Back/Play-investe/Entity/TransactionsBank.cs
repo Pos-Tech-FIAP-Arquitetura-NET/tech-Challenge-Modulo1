@@ -22,7 +22,7 @@ namespace Play_investe.Entity
             Type = type;            
             SourceAccountId = sourceAccountId;
             DestinationAccountId = destinationAccountId;
-            CreatedDate = DateTime.Now;
+        
         }
 
 

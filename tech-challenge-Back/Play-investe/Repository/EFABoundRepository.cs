@@ -9,6 +9,17 @@ namespace Play_investe.Repository
         public EFABoundRepository(ApplicationDbContext context) : base(context)
         {
 
+
+        }
+
+        public List<Bound> GetFixedBound()
+        {
+            return _context.Bound.Where(b => b.Type == "Fixed Bound").ToList();
+        }
+
+        public List<Bound> GetIndexedBound()
+        {
+            return _context.Bound.Where(b => b.Type == "Indexed Bound").ToList();
         }
     }
 }

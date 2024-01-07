@@ -157,14 +157,19 @@ namespace Play_investe.Migrations
                         .IsRequired()
                         .HasColumnType("DATETIME");
 
-                    b.Property<double>("Index")
-                        .HasColumnType("FLOAT");
+                    b.Property<string>("Index")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)");
 
                     b.Property<int>("LiquidityType")
                         .HasColumnType("int");
 
                     b.Property<double>("Percent")
                         .HasColumnType("FLOAT");
+
+                    b.Property<string>("TaxName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
                         .IsRequired()

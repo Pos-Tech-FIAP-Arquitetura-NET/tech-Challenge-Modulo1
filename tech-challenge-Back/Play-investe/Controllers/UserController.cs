@@ -24,7 +24,8 @@ public class UserController : ControllerBase
     private readonly PasswordHasherService _passwordHasher;
     private IAddressRepository _addressRepository;
 
-    public UserController(IUserRepository userRepository,
+    public UserController(
+        IUserRepository userRepository,
         ILogger<UserController> logger,
         PasswordHasherService passwordHasher,
         IAccountRepository accontRepository,
@@ -100,7 +101,7 @@ public class UserController : ControllerBase
 
 
     /// <summary>
-    ///  Obtém todos os usuários, o método necessita de autenticação e permissão de Administrador
+    ///  Obtém usuario por id, o método necessita de autenticação
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
@@ -108,8 +109,7 @@ public class UserController : ControllerBase
     /// <response code="401"> Não Autenticado</response>
     /// <response code="403"> Ñão Autorizado</response>
     /// <response code="404"> Usuário não encontrado</response>
-    [Authorize]
-    [Authorize(Roles = Permitions.Admin)]
+    [Authorize]   
     [HttpGet("getUserById/{id}")]
     public IActionResult GetUserById(int id)
     {
@@ -120,7 +120,7 @@ public class UserController : ControllerBase
 
         return Ok(user);
     }
-
+        
 
     /// <summary>
     /// Modifica email do usuário, método necessita de autenticação.
@@ -174,7 +174,9 @@ public class UserController : ControllerBase
         }
         else
         {
-            user.ChangeUserPassword(newPassword, _passwordHasher);
+            var password = user.ChangeUserPassword(newPassword, _passwordHasher);
+            user.Password = password;
+            _userRepository.Put(user);
 
             return Ok("Senha alterada com sucesso");
         }

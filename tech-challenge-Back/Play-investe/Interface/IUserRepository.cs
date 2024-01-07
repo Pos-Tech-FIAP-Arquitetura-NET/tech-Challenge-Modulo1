@@ -27,5 +27,7 @@ namespace Play_investe.Interface
         /// <param name="email"></param>
         /// <returns></returns>
         User GetUserByEmail(string email);
+
+        
     }
 }

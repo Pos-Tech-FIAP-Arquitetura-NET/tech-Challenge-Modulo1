@@ -24,7 +24,7 @@ namespace Play_investe.Entity
             State = state;
             IdUser = idUser;
             Country = country;
-            CreatedDate = DateTime.Now;
+          
         }
 
     }

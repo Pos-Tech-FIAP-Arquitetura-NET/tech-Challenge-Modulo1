@@ -8,5 +8,6 @@ namespace Play_investe.Interface
     public interface IAccountRepository : IRepository<Account>
     {
 
+        public Account GetUserFullAccountInformation(int id);
     }
 }

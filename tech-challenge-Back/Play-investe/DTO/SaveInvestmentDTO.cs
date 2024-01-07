@@ -4,10 +4,8 @@ namespace Play_investe.DTO
 {
     public class SaveInvestmentDTO
     {
-        public string Type { get; set; }
+        public int IdBound { get; set; }
         public float Value { get; set; }       
-        public DateTime AvailabilityDate { get; set; }
-        public DateTime AquisitionDate { get; set; }
-      
+
     }
 }

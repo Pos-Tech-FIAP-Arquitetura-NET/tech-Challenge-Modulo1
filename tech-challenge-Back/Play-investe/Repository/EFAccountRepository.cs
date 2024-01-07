@@ -13,5 +13,17 @@ namespace Play_investe.Repository
         {
             
         }
+
+        /// <summary>
+        /// Traz o usuario e as informações de conta e investimento
+        /// </summary>
+        /// <param name="id"></param>        
+        /// <returns></returns>
+        public Account GetUserFullAccountInformation(int userId)
+        {
+            var account = _context.Account.FirstOrDefault(acc => acc.IdUser == userId);
+
+            return account;
+        }
     }
 }
