@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using StoreFIAP.Repository;
+using Play_investe.Repository;
 
 #nullable disable
 
@@ -270,7 +270,7 @@ namespace Play_investe.Migrations
                     b.ToTable("TransactionsBank", (string)null);
                 });
 
-            modelBuilder.Entity("StoreFIAP.Entity.User", b =>
+            modelBuilder.Entity("Play_investe.Entity.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -332,7 +332,7 @@ namespace Play_investe.Migrations
 
             modelBuilder.Entity("Play_investe.Entity.Account", b =>
                 {
-                    b.HasOne("StoreFIAP.Entity.User", "User")
+                    b.HasOne("Play_investe.Entity.User", "User")
                         .WithOne("Account")
                         .HasForeignKey("Play_investe.Entity.Account", "IdUser")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -343,7 +343,7 @@ namespace Play_investe.Migrations
 
             modelBuilder.Entity("Play_investe.Entity.Address", b =>
                 {
-                    b.HasOne("StoreFIAP.Entity.User", "User")
+                    b.HasOne("Play_investe.Entity.User", "User")
                         .WithOne("Address")
                         .HasForeignKey("Play_investe.Entity.Address", "IdUser")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -394,7 +394,7 @@ namespace Play_investe.Migrations
                     b.Navigation("Investments");
                 });
 
-            modelBuilder.Entity("StoreFIAP.Entity.User", b =>
+            modelBuilder.Entity("Play_investe.Entity.User", b =>
                 {
                     b.Navigation("Account")
                         .IsRequired();

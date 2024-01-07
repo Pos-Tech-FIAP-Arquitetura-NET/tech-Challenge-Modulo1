@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StoreFIAP.Entity;
-using StoreFIAP.Interface;
+using Play_investe.Entity;
+using Play_investe.Interface;
 using static Dapper.SqlMapper;
 
-namespace StoreFIAP.Repository
+namespace Play_investe.Repository
 {
     public class EFRepository<T> : IRepository<T> where T : Entitys
     {

@@ -1,5 +1,5 @@
 ﻿using Play_investe.DTO;
-using StoreFIAP.Entity;
+using Play_investe.Entity;
 using System.Transactions;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 

@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Play_investe.Entity;
-using StoreFIAP.Configurations;
-using StoreFIAP.Entity;
+using Play_investe.Configurations;
+using Play_investe.Entity;
 using System.Transactions;
 
-namespace StoreFIAP.Repository
+namespace Play_investe.Repository
 {
     public class ApplicationDbContext : DbContext
     {

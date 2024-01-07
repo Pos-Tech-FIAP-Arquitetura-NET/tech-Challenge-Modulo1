@@ -1,4 +1,4 @@
-﻿namespace StoreFIAP.Logging
+﻿namespace Play_investe.Logging
 {
     public class CustomLoggerProviderConfiguration
     {

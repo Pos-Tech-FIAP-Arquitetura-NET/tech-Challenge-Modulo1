@@ -1,6 +1,6 @@
-﻿using StoreFIAP.Entity;
+﻿using Play_investe.Entity;
 
-namespace StoreFIAP.Interface
+namespace Play_investe.Interface
 {
     public interface IRepository<T> where T : Entitys
     {

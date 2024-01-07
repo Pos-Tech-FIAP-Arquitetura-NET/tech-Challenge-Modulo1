@@ -1,6 +1,7 @@
 ﻿using Play_investe.Entity;
 using Play_investe.Interface;
-using StoreFIAP.Repository;
+using Play_investe
+    .Repository;
 
 namespace Play_investe.Repository
 {

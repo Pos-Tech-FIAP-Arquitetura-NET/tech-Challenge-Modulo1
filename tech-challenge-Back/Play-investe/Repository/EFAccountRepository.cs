@@ -1,8 +1,8 @@
 ﻿using Play_investe.Entity;
 using Play_investe.Interface;
-using StoreFIAP.Entity;
-using StoreFIAP.Interface;
-using StoreFIAP.Repository;
+using Play_investe.Entity;
+using Play_investe.Interface;
+using Play_investe.Repository;
 using UserTemplate.Services;
 
 namespace Play_investe.Repository

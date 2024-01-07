@@ -1,10 +1,11 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using StoreFIAP.Entity;
+using Play_investe
+    .Entity;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace StoreFIAP.Services
+namespace Play_investe.Services
 {
     public class TokenService : ITokenService
     {

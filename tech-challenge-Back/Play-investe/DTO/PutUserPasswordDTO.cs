@@ -1,4 +1,5 @@
-﻿namespace StoreFIAP.DTO
+﻿namespace Play_investe
+    .DTO
 {
     public class PutUserDTO
     {        

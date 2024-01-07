@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace StoreFIAP.Logging
+namespace Play_investe.Logging
 {
     public class CustomLoggerProvider : ILoggerProvider
     {

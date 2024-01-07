@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using StoreFIAP.Entity;
+using Play_investe.Entity;
 using Play_investe.Entity;
 using System.Reflection.Emit;
 

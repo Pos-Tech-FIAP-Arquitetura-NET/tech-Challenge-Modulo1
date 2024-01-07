@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Play_investe.Entity;
-using StoreFIAP.Entity;
+using Play_investe.Entity;
 
-namespace StoreFIAP.Configurations
+namespace Play_investe.Configurations
 {
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {

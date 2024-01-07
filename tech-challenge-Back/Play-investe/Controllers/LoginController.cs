@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StoreFIAP.DTO;
-using StoreFIAP.Interface;
-using StoreFIAP.Services;
+using Play_investe.DTO;
+using Play_investe.Interface;
+using Play_investe.Services;
 using UserTemplate.Services;
 
-namespace StoreFIAP.Controllers
+namespace Play_investe.Controllers
 {
     [ApiController]
     [Route("login")]

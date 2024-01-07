@@ -1,4 +1,5 @@
-﻿namespace StoreFIAP.Enums
+﻿namespace Play_investe
+    .Enums
 {
     public enum PermitionsTypes
     {

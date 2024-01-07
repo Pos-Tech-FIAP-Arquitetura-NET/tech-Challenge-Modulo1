@@ -1,4 +1,4 @@
-﻿namespace StoreFIAP.Entity
+﻿namespace Play_investe.Entity
 {
     public class Entitys
     {

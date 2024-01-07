@@ -2,9 +2,9 @@
 using Play_investe.DTO;
 using Play_investe.Entity;
 using Play_investe.Interface;
-using StoreFIAP.DTO;
-using StoreFIAP.Entity;
-using StoreFIAP.Interface;
+using Play_investe.DTO;
+using Play_investe.Entity;
+using Play_investe.Interface;
 using UserTemplate.Services;
 
 namespace Play_investe.Controllers

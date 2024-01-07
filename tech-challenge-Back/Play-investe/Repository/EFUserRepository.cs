@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using StoreFIAP.Entity;
-using StoreFIAP.Interface;
-using StoreFIAP.Services;
+using Play_investe.Entity;
+using Play_investe.Interface;
+using Play_investe.Services;
 using System.Linq;
 using UserTemplate.Services;
 
-namespace StoreFIAP.Repository
+namespace Play_investe.Repository
 {
     public class EFUserRepository : EFRepository<User>, IUserRepository
     {

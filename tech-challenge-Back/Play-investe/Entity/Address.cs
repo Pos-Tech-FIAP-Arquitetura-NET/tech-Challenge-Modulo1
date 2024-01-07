@@ -1,4 +1,4 @@
-﻿using StoreFIAP.Entity;
+﻿using Play_investe.Entity;
 
 namespace Play_investe.Entity
 {

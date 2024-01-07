@@ -1,4 +1,4 @@
-﻿namespace StoreFIAP.Logging
+﻿namespace Play_investe.Logging
 {
     public class CustomLogger : ILogger
     {
@@ -32,7 +32,7 @@
 
         private void WriteTextInFile(string mensage)
         {
-            var filePath = $@"C:\Users\annek\OneDrive\Documentos\ESTUDO\FIAP\Modulo 1\StoreFiap\template.net-user-project\bin\LOG-{DateTime.Now:yyyy-MM-dd}.txt";
+            var filePath = $@"C:\Users\annek\OneDrive\Documentos\ESTUDO\FIAP\Modulo 1\Play_investe\template.net-user-project\bin\LOG-{DateTime.Now:yyyy-MM-dd}.txt";
             if (!File.Exists(filePath))
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(filePath));

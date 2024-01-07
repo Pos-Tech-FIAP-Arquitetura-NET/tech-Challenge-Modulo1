@@ -1,6 +1,6 @@
-﻿using StoreFIAP.Entity;
+﻿using Play_investe.Entity;
 
-namespace StoreFIAP.Services
+namespace Play_investe.Services
 {
     public interface ITokenService
     {

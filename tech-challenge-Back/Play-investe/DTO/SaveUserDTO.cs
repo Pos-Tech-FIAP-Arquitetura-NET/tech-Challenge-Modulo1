@@ -1,6 +1,7 @@
-﻿using StoreFIAP.Enums;
+﻿using Play_investe
+    .Enums;
 
-namespace StoreFIAP.DTO
+namespace Play_investe.DTO
 {
     public class SaveUserDTO
     {

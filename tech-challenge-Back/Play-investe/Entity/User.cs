@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Play_investe.Entity;
-using StoreFIAP.DTO;
-using StoreFIAP.Enums;
+using Play_investe.DTO;
+using Play_investe.Enums;
 using UserTemplate.Services;
 
-namespace StoreFIAP.Entity
+namespace Play_investe.Entity
 {
     /// <summary>
     /// Representa um usuário no sistema, contendo informações essenciais e métodos relacionados. Herda propriedade Id de Entitys
