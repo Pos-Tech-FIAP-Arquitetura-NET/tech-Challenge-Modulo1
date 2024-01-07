@@ -1,0 +1,26 @@
+<section>
+  <h4 style="font-size: 14px">Cotação em tempo real</h4>
+  <div class="container-interno-cotacao">
+    <div *ngFor="let cotacao of valorDolarSemana">
+      <div class="card mb-3" style="width: 18rem">
+        <div class="card-body">
+          <div *ngIf="cotacao.USDBRL.name == 'Dólar Americano/Real Brasileiro'">
+            <h4 class="card-title">{{ cotacao.USDBRL.code }}</h4>
+          </div>
+          <p class="card-text">{{ cotacao.USDBRL.high | money }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngFor="let cotacao of valorEuroSemana">
+      <div class="card mb-3" style="width: 18rem">
+        <div class="card-body">
+          <div *ngIf="cotacao.EURBRL.name == 'Euro/Real Brasileiro'">
+            <h4 class="card-title">{{ cotacao.EURBRL.code }}</h4>
+          </div>
+          <p class="card-text">{{ cotacao.EURBRL.high | money }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

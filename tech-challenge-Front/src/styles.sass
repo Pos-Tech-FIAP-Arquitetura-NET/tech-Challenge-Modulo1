@@ -1,0 +1,58 @@
+@import 'bootstrap/scss/bootstrap'
+@import "~@fortawesome/fontawesome-free/css/all.css"
+    
+:root
+  --brand-color1: #36ac07
+  --brand-color2: #485542 
+  --brand-color3: #ddd105
+  --brand-color4: #389f0f
+  --hover-blue: #3f90c6 
+  --hover-grey: #5c5b5b 
+  --white: #ffffff
+  --black: #000000 
+  --grey-bg: #1c1c1c 
+  --grey-light: #ddd8d8 
+  --grey-dark: #363535 
+  --focus: #ddd8d830 
+  --transparence-color2: #4caf50d4 
+
+ 
+ 
+*
+  margin:0
+  padding: 0
+
+  
+
+body
+  width: 100vw
+  height: 100vh
+  background-color: var(--black)
+  overflow-x: hidden
+  display: flex
+  margin: 0
+  flex-direction: column
+  align-content: center
+  align-items: center
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif
+
+  &::-webkit-scrollbar
+    width: 7px
+    background-color: var(--grey-light)
+
+  &::-webkit-scrollbar-thumb
+    background-color: var(--brand-color1)
+    border-radius: 5px
+
+    &:hover
+      background-color: var(--hover-blue)
+
+
+app-root, app-home
+  width: 100%
+  height: 100%
+
+app-home
+  display: flex
+  flex-direction: column
+  justify-content: space-between

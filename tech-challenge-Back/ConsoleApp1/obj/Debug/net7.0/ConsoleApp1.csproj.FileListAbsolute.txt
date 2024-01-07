@@ -1,0 +1,4 @@
+C:\Users\annek\OneDrive\Documentos\ESTUDO\FIAP\Modulo 1\tech-Challenge-Modulo1\tech-challenge-Back\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\annek\OneDrive\Documentos\ESTUDO\FIAP\Modulo 1\tech-Challenge-Modulo1\tech-challenge-Back\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.AssemblyInfoInputs.cache
+C:\Users\annek\OneDrive\Documentos\ESTUDO\FIAP\Modulo 1\tech-Challenge-Modulo1\tech-challenge-Back\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.AssemblyInfo.cs
+C:\Users\annek\OneDrive\Documentos\ESTUDO\FIAP\Modulo 1\tech-Challenge-Modulo1\tech-challenge-Back\ConsoleApp1\obj\Debug\net7.0\ConsoleApp1.csproj.CoreCompileInputs.cache
