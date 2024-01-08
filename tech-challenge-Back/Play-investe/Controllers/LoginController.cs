@@ -26,7 +26,7 @@ namespace Play_investe.Controllers
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPost("login")]      
         public IActionResult Authenticate([FromBody ] LoginDTO login)
         {
             var user = _userRepository.ValidatedCredential(login.Email, login.Password);          
