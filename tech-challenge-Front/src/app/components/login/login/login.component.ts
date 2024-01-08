@@ -7,19 +7,26 @@ import {NgToastModule, NgToastService} from "ng-angular-popup";
 @Component({
   selector: 'app-login',
   template:`
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-          <div>
-              <label for="email">Email:</label>
-              <input type="email" id="email" formControlName="email">
-          </div>
+    <div class="container-main-login">
 
-          <div>
-              <label for="password">Password:</label>
-              <input type="password" id="password" formControlName="password">
-          </div>
+            <img src="./../../../../assets/imagem.png">
 
-          <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
-      </form>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <h6>Login</h6>
+            <div>
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" formControlName="email" class="form-control">
+            </div>
+
+            <div>
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" id="password" formControlName="password" class="form-control">
+            </div>
+
+            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-success"
+            style="background-color: var(--brand-color3); color: black">Entrar</button>
+        </form>
+    </div>
 
 
   `,
@@ -48,7 +55,7 @@ export class LoginComponent implements  OnInit{
         (result) => {
           if(result){
           this.toast.success({detail:"Sucesso!",summary:'Usuário logado com sucesso!',duration:5000, position:'topRight'});
-          this.router.navigate(["/dashboard"]);
+          this.router.navigate(["/dashboard/conta"]);
           }
 
         },

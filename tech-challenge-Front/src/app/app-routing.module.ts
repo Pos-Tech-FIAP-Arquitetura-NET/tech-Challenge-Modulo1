@@ -5,6 +5,7 @@ import {GuardGuard} from "./guards/guard.guard";
 import {DashboardComponent} from "./pages/dashboard/dashboard/dashboard.component";
 import {LoginComponent} from "./components/login/login/login.component";
 import {CadastroComponent} from "./components/cadastro/cadastro/cadastro.component";
+import {AccountComponent} from "./components/account/account/account.component";
 
 const routes: Routes = [
   {
@@ -21,7 +22,7 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [GuardGuard],
     children: [
-      { path: 'child1', component: DashboardComponent },
+      { path: 'conta', component: AccountComponent },
       { path: 'child2', component: DashboardComponent },
     ]
   },

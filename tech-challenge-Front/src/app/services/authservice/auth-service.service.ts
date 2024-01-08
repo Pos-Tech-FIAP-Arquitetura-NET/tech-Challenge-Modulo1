@@ -21,28 +21,26 @@ export class AuthServiceService {
   }
 
   login(email: string, password: string): Observable<any> {
-    console.log("entrei no login");
+
     const data = {
       email: email,
       password: password,
     };
-    console.log("dados passados no login" + data.email);
 
-    return this.http.post(`${this.baseUrl}login`, data).pipe(
+    return this.http.post(`${this.baseUrl}login/login`, data).pipe(
       tap((responseToken: any) => {
         if (responseToken) {
           this.token = responseToken.token;
 
           localStorage.setItem(
-            "currentUser",
+            "user",
             JSON.stringify({
               username: responseToken.user.name,
               token: this.token,
               idUser: responseToken.user.id,
             })
           );
-
-          this.router.navigate(['/dashboard/info']);
+          this.router.navigate(['/dashboard']);
         }
       })
     );
@@ -59,12 +57,21 @@ export class AuthServiceService {
 
   isAuthenticated(): boolean {
     if(this.token){
+      console.log(this.token)
       return true
     }
     else {
       return false
     }
 
+  }
+
+  initialize() {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      this.token = user.token;
+    }
   }
 
 }

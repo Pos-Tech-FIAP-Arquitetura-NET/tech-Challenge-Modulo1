@@ -14,6 +14,9 @@ import { LoginComponent } from './components/login/login/login.component';
 import { CadastroComponent } from './components/cadastro/cadastro/cadastro.component';
 import {NgToastModule} from "ng-angular-popup";
 import {FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { AccountComponent } from './components/account/account/account.component';
+import { MenuLateralComponent } from './components/menuLateral/menu-lateral/menu-lateral.component';
+import { MenuSuperiorDashboardComponent } from './components/menuSuperiorDashboard/menu-superior-dashboard/menu-superior-dashboard.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import {FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
     MoneyPipe,
     DashboardComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    AccountComponent,
+    MenuLateralComponent,
+    MenuSuperiorDashboardComponent
   ],
   imports: [
     BrowserModule,
