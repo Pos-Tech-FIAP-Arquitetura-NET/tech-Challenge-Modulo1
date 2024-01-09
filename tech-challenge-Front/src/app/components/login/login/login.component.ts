@@ -43,7 +43,7 @@ export class LoginComponent implements  OnInit{
   constructor(
     private fb: FormBuilder,
     private authService: AuthServiceService,
-    private  toast: NgToastService,
+    public  toast: NgToastService,
     private router : Router) {
   }
 
@@ -53,9 +53,12 @@ export class LoginComponent implements  OnInit{
     if (this.loginForm.valid && userName && password) {
       this.authService.login(userName, password).subscribe(
         (result) => {
-          if(result){
-          this.toast.success({detail:"Sucesso!",summary:'Usuário logado com sucesso!',duration:5000, position:'topRight'});
-          this.router.navigate(["/dashboard/conta"]);
+          if(result.user.id > 0){
+            this.toast.success(
+              {detail:"SUCCESS",
+                summary:'Your Success Message',
+                duration:5000});
+          this.router.navigate(["/dashboard"]);
           }
 
         },

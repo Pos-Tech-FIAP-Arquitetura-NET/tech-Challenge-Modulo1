@@ -17,6 +17,11 @@ import {FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AccountComponent } from './components/account/account/account.component';
 import { MenuLateralComponent } from './components/menuLateral/menu-lateral/menu-lateral.component';
 import { MenuSuperiorDashboardComponent } from './components/menuSuperiorDashboard/menu-superior-dashboard/menu-superior-dashboard.component';
+import {NgbTooltip} from "@ng-bootstrap/ng-bootstrap";
+import { InvestimentComponent } from './components/investiment/investiment.component';
+import { SaldoComponent } from './components/saldo/saldo.component';
+import { TitulosComponent } from './components/titulos/titulos.component';
+import { SubMenuComponent } from './components/sub-menu/sub-menu.component';
 
 
 @NgModule({
@@ -33,17 +38,22 @@ import { MenuSuperiorDashboardComponent } from './components/menuSuperiorDashboa
     CadastroComponent,
     AccountComponent,
     MenuLateralComponent,
-    MenuSuperiorDashboardComponent
+    MenuSuperiorDashboardComponent,
+    InvestimentComponent,
+    SaldoComponent,
+    TitulosComponent,
+    SubMenuComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgToastModule,
-    ReactiveFormsModule,
-    FormsModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        NgToastModule,
+        ReactiveFormsModule,
+        FormsModule,
+        NgbTooltip
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

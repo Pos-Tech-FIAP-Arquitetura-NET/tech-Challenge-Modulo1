@@ -1,8 +1,21 @@
 <section>
-  <div class="container-lateral">
-  <h4>container lateral</h4>
+  <div class="account-information" >
+    <div class=" dropdown" >
+      <a href="#" class="link-body-emphasis text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="rounded-circle" ngbTooltip="Sair">
+          <i class="fa fa-user"></i>
+        </div>
+      </a>
+      <ul class="dropdown-menu text-small shadow" style="">
+        <li><a class="dropdown-item" href="#">Configurações</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#" (click)="logout()">Sair</a></li>
+      </ul>
+    </div>
+    <h4>Olá {{nomeSaudacao}}! </h4>
   </div>
-  <div class="container-main-info">
-<h1>main container</h1>
+  <div class="container-account-info">
+    <small>Ag: {{account.agency}} | Conta: {{account.accountNumber}} </small>
+    <small>Tipo: {{account.accountType}}</small>
   </div>
 </section>

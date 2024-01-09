@@ -90,7 +90,7 @@ public class InvestimentController : ControllerBase
 
         var investments = _investimentRepository.GetInvestment(account.Id);
 
-        investments.Account = null;        
+        investments.ForEach(investment => investment.Account = null);
 
         return Ok(investments);
     }

@@ -1,7 +1,19 @@
-
 <div class="container-dashboard">
-  <app-menu-superior-dashboard></app-menu-superior-dashboard>
-  <router-outlet></router-outlet>
+<app-menu-superior-dashboard></app-menu-superior-dashboard>
+<main>
+  <div class="colunas">
+    <h6>Informações da Conta</h6>
+    <app-saldo></app-saldo>
+   <app-investiment></app-investiment>
+  </div>
+  <div class="colunas">
+    <app-titulos></app-titulos>
+  </div>
+  <div class="colunas">
+    <app-dolar-charts></app-dolar-charts>
+  </div>
+</main>
   <app-footer></app-footer>
 </div>
+
 

@@ -6,6 +6,7 @@ import {DashboardComponent} from "./pages/dashboard/dashboard/dashboard.componen
 import {LoginComponent} from "./components/login/login/login.component";
 import {CadastroComponent} from "./components/cadastro/cadastro/cadastro.component";
 import {AccountComponent} from "./components/account/account/account.component";
+import {DolarChartsComponent} from "./components/dolar-charts/dolar-charts.component";
 
 const routes: Routes = [
   {
@@ -22,7 +23,7 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [GuardGuard],
     children: [
-      { path: 'conta', component: AccountComponent },
+      { path: 'cotacao', component: DolarChartsComponent },
       { path: 'child2', component: DashboardComponent },
     ]
   },

@@ -11,10 +11,9 @@ namespace Play_investe.Repository
 
         }
 
-        public Investment GetInvestment(int Id)
+        public List<Investment> GetInvestment(int Id)
         {
-            var investment = _context.Investment.FirstOrDefault(x => x.IdAccount == Id);
-
+            var investment = _context.Investment.Where(x => x.IdAccount == Id).ToList();
 
             return investment;
         }

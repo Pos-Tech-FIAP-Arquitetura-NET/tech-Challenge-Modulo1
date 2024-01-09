@@ -183,6 +183,25 @@ public class UserController : ControllerBase
     }
 
     /// <summary>
+    /// Obtem usuario logado.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <response code="200"> Retonar Sucesso</response>
+    /// <response code="401"> Não Autenticado</response> 
+    /// <response code="404"> Usuário não encontrado</response>
+    [Authorize]
+    [HttpGet("retrieveUser")]
+    public IActionResult RetrieveUser()
+    {
+        var userEmail = HttpContext.User.FindFirst(ClaimTypes.Email)?.Value;
+
+        var user = _userRepository.GetUserByEmail(userEmail);        
+
+        return Ok(user);
+         
+    }
+
+    /// <summary>
     /// Deleta usuário, o método necessita de permissão de Administrador.
     /// </summary>
     /// <param name="id"></param>

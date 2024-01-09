@@ -1,0 +1,48 @@
+<section>
+  <!-- Tabela para Fixed Bound -->
+  <h6>Prefixados</h6>
+  <table>
+    <thead>
+    <tr>
+      <th>Prazo</th>
+      <th>Rentabilidade</th>
+      <th>Vencimento</th>
+      <th>Investir</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of fixed">
+      <td>{{getLiquidity(item.liquidityType)}}</td>
+      <td>{{item.percent.toFixed(2)}} % aa</td>
+
+      <td>{{getDueDate(item.liquidityType) }}</td>
+      <td>
+        <button class="btn-investir">Investir</button>
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+
+  <h6>Selic</h6>
+  <table>
+    <thead>
+    <tr>
+      <th>Prazo</th>
+      <th>Rentabilidade</th>
+      <th>Vencimento</th>
+      <th>Investir</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of preIndexed">
+      <td>{{getLiquidity(item.liquidityType)}}</td>
+      <td>Selic + {{item.percent.toFixed(2)}} %</td>
+      <td>{{getDueDate(item.liquidityType)}}</td>
+      <td>
+        <button class="btn-investir" (click)="investir(item.Id)">Investir</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
