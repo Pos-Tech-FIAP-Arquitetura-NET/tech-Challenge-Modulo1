@@ -3,6 +3,9 @@ import {AccountService} from "../../services/account/account.service";
 import {BoundService} from "../../services/bound/bound.service";
 import { format } from 'date-fns';
 import { pt } from 'date-fns/locale';
+import {GeneralService} from "../../services/generalService/general.service";
+import {ModalInvestirComponent} from "../modal-investir/modal-investir.component";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-titulos',
@@ -19,7 +22,10 @@ export class TitulosComponent implements OnInit {
     this.getPreFixed()
   }
 
-  constructor(private boundService: BoundService) {
+  constructor(
+    private boundService: BoundService,
+    public generalService: GeneralService,
+    private modalService: NgbModal) {
   }
 
   getFixed() {
@@ -30,59 +36,19 @@ export class TitulosComponent implements OnInit {
   getPreFixed() {
     this.boundService.getAllBoundIndexed().subscribe((data) => {
       this.preIndexed = data
+      console.log(data)
     })
   }
 
-  getLiquidity(liquidity: number): string {
-    switch (liquidity) {
-      case 0:
-        return 'Liquidez diária';
-      case 30:
-        return '1 mês';
-      case 60:
-        return '2 meses';
-      case 90:
-        return '3 meses';
-      case 180:
-        return '6 meses';
-      case 365:
-        return '1 ano';
-      case 730:
-        return '2 anos';
-      case 1825:
-        return '5 anos';
-      default:
-        return '';
-    }
-  }
 
-  getDueDate(liquidity: number): string {
-    const hoje = new Date();
-
-    switch (liquidity) {
-      case 0:
-        return 'Hoje';
-      case 30:
-        return format(new Date(hoje.setDate(hoje.getDate() + 30)), 'dd MMM yyyy', { locale: pt });
-      case 60:
-        return format(new Date(hoje.setDate(hoje.getDate() + 60)), 'dd MMM yyyy', { locale: pt });
-      case 90:
-        return format(new Date(hoje.setDate(hoje.getDate() + 90)), 'dd MMM yyyy', { locale: pt });
-      case 180:
-        return format(new Date(hoje.setDate(hoje.getDate() + 180)), 'dd MMM yyyy', { locale: pt });
-      case 365:
-        return format(new Date(hoje.setDate(hoje.getDate() + 365)), 'dd MMM yyyy', { locale: pt });
-      case 730:
-        return format(new Date(hoje.setDate(hoje.getDate() + 730)), 'dd MMM yyyy', { locale: pt });
-      case 1825:
-        return format(new Date(hoje.setDate(hoje.getDate() + 1825)), 'dd MMM yyyy', { locale: pt });
-      default:
-        return format(hoje, 'dd MMM yyyy', { locale: pt });
-    }
-  }
 
   investir(id : number){
 
+    const modalRef = this.modalService.open(ModalInvestirComponent, {
+      size: 'md',
+      windowClass: 'custom-modal',
+    });
+    modalRef.componentInstance.idBound = id;
   }
 
 }

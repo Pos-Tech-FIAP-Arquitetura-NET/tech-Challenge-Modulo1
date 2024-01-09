@@ -5,6 +5,7 @@
       <img src="./../../../assets/logo.png" alt="" width="100px" />
       <div class="menu-opcoes-conta">
         <button *ngFor="let item of menu"
+                (click)="rota(item.route)"
                 [style.background-color]="item.color" ngbTooltip="{{item.titulo}}">
           <i [class]="item.fafaIcon"></i>
         </button>

@@ -27,10 +27,21 @@ export class CotacaoService {
     )
   }
 
- 
+  public getSelic(): Observable<any> {
+    const dataInicial = new Date()
+    const dataFinal = new Date()
+    const options: Intl.DateTimeFormatOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
 
- 
- 
+    const dataInicialFormatada = dataInicial.toLocaleDateString('pt-BR', options);
+    const dataFinalFormatada = dataFinal.toLocaleDateString('pt-BR', options);
+
+    return this.http.get(`https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?formato=json&dataInicial=${dataInicialFormatada}&dataFinal=${dataFinalFormatada}`)
+  }
+
+
+
+
+
 
 
 }

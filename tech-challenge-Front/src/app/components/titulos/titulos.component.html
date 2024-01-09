@@ -12,12 +12,12 @@
     </thead>
     <tbody>
     <tr *ngFor="let item of fixed">
-      <td>{{getLiquidity(item.liquidityType)}}</td>
+      <td>{{generalService.getLiquidity(item.liquidityType)}}</td>
       <td>{{item.percent.toFixed(2)}} % aa</td>
 
-      <td>{{getDueDate(item.liquidityType) }}</td>
+      <td>{{generalService.getDueDate(item.liquidityType) }}</td>
       <td>
-        <button class="btn-investir">Investir</button>
+        <button class="btn-investir" (click)="investir(item.id)">Investir</button>
       </td>
 
     </tr>
@@ -36,11 +36,11 @@
     </thead>
     <tbody>
     <tr *ngFor="let item of preIndexed">
-      <td>{{getLiquidity(item.liquidityType)}}</td>
+      <td>{{generalService.getLiquidity(item.liquidityType)}}</td>
       <td>Selic + {{item.percent.toFixed(2)}} %</td>
-      <td>{{getDueDate(item.liquidityType)}}</td>
+      <td>{{generalService.getDueDate(item.liquidityType)}}</td>
       <td>
-        <button class="btn-investir" (click)="investir(item.Id)">Investir</button>
+        <button class="btn-investir" (click)="investir(item.id)">Investir</button>
       </td>
     </tr>
     </tbody>

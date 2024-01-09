@@ -4,15 +4,21 @@ import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import { delay, map, tap } from 'rxjs/operators';
+import {GeneralService} from "../generalService/general.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServiceService {
+
+
   private token: string ="";
   loggedIn = false;
   baseUrl = environment.baseUrl;
-  constructor(private http: HttpClient, public router: Router) { }
+  constructor(
+    private http: HttpClient,
+    public router: Router,
+    public generalService : GeneralService) { }
 
 
   getLoggedUserName() {

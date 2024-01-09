@@ -76,8 +76,6 @@ namespace Play_investe.Entity
                 throw new ArgumentException("O valor de saque deve ser maior que zero.");
             }
         }
-
-
         public void Deposit(float amount)
         {
             if (amount > 0)

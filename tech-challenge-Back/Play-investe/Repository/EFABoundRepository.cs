@@ -19,7 +19,8 @@ namespace Play_investe.Repository
 
         public List<Bound> GetIndexedBound()
         {
-            return _context.Bound.Where(b => b.Type == "Indexed Bound").ToList();
+            return _context.Bound.Where(b => b.Type == "Indexed Bound").OrderBy(c => c.LiquidityType).ToList();
         }
+ 
     }
 }

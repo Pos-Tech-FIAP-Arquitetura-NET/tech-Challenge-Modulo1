@@ -6,4 +6,5 @@ namespace Play_investe.Interface
     public interface ITransactionsBankRepository : IRepository<TransactionsBank>
     {
     }
+   
 }

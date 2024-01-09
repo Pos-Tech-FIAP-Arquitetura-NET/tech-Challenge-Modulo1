@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, CUSTOM_ELEMENTS_SCHEMA, OnInit} from '@angular/core';
 import {AuthServiceService} from "../../../services/authservice/auth-service.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {NgToastModule, NgToastService} from "ng-angular-popup";
+import {GeneralService} from "../../../services/generalService/general.service";
 
 @Component({
   selector: 'app-login',
@@ -43,8 +44,8 @@ export class LoginComponent implements  OnInit{
   constructor(
     private fb: FormBuilder,
     private authService: AuthServiceService,
-    public  toast: NgToastService,
-    private router : Router) {
+    private router : Router,
+    private generalService: GeneralService) {
   }
 
   onSubmit() {
@@ -54,10 +55,7 @@ export class LoginComponent implements  OnInit{
       this.authService.login(userName, password).subscribe(
         (result) => {
           if(result.user.id > 0){
-            this.toast.success(
-              {detail:"SUCCESS",
-                summary:'Your Success Message',
-                duration:5000});
+           this.generalService.showSuccess("Login efetuado com sucesso!")
           this.router.navigate(["/dashboard"]);
           }
 

@@ -14,13 +14,13 @@ export class MenuSuperiorDashboardComponent implements OnInit{
 menu= [
   {
   titulo:'Extrato',
-  route:'',
+  route:'/dashboard/extrato',
   fafaIcon:"fa fa-file-text",
   color: 'var(--brand-color1)'
   },
   {
     titulo:'Transferências',
-    route:'',
+    route:'/dashboard/transferencias',
     fafaIcon:"fa fa-exchange",
     color: 'var(--brand-color3)'
   },
@@ -32,13 +32,13 @@ menu= [
   },
   {
     titulo:'Meus investimentos',
-    route:'',
+    route:'dashboard/investimentos/',
     fafaIcon:"fa fa-line-chart",
     color: 'var(--brand-color3)'
   },
   {
     titulo:'Investir',
-    route:'',
+    route:'dashboard/investir/',
     fafaIcon:"fa fa-bar-chart",
     color: 'var(--brand-color1)'
   },
@@ -53,7 +53,11 @@ menu= [
 
   ngOnInit() {
   }
-constructor() {
+constructor(private route: Router) {
 }
+
+  rota(rota: string){
+  this.route.navigate([rota])
+  }
 
 }

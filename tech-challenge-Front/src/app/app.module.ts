@@ -22,6 +22,12 @@ import { InvestimentComponent } from './components/investiment/investiment.compo
 import { SaldoComponent } from './components/saldo/saldo.component';
 import { TitulosComponent } from './components/titulos/titulos.component';
 import { SubMenuComponent } from './components/sub-menu/sub-menu.component';
+import { ModalInvestirComponent } from './components/modal-investir/modal-investir.component';
+import {BrowserAnimationsModule, provideAnimations} from "@angular/platform-browser/animations";
+import {provideToastr, ToastrModule} from "ngx-toastr";
+import { MeusInvestimentosComponent } from './components/meus-investimentos/meus-investimentos.component';
+import { ExtratoComponent } from './components/extrato/extrato.component';
+
 
 
 @NgModule({
@@ -42,7 +48,11 @@ import { SubMenuComponent } from './components/sub-menu/sub-menu.component';
     InvestimentComponent,
     SaldoComponent,
     TitulosComponent,
-    SubMenuComponent
+    SubMenuComponent,
+    ModalInvestirComponent,
+    MeusInvestimentosComponent,
+    ExtratoComponent,
+
   ],
     imports: [
         BrowserModule,
@@ -51,10 +61,21 @@ import { SubMenuComponent } from './components/sub-menu/sub-menu.component';
         NgToastModule,
         ReactiveFormsModule,
         FormsModule,
-        NgbTooltip
+        NgbTooltip,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot(
+          {
+            timeOut: 10000,
+            positionClass: 'toast-top-right',
+            preventDuplicates: true,
+          }
+        ),
 
     ],
-  providers: [],
+  providers: [
+    provideAnimations(),
+    provideToastr()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

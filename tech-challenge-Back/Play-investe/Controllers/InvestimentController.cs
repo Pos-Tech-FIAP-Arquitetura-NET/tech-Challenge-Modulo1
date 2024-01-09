@@ -20,6 +20,7 @@ public class InvestimentController : ControllerBase
     private IUserRepository _userRepository;
     private IBoundRepository _boundRepository;
     private IAccountRepository _accountRepository;
+    private ITransactionsBankRepository _transactionsBank;
     private readonly ILogger<InvestimentController> _logger;
 
     public InvestimentController(
@@ -27,13 +28,15 @@ public class InvestimentController : ControllerBase
         ILogger<InvestimentController> logger,
        IBoundRepository boundRepository,
         IUserRepository userRepository,
-       IAccountRepository acccountRepository)
+       IAccountRepository acccountRepository,
+        ITransactionsBankRepository transactionbank)
     {
         _investimentRepository = investimentRepository;
         _logger = logger;
         _boundRepository = boundRepository;
         _userRepository = userRepository;
         _accountRepository = acccountRepository;
+        _transactionsBank = transactionbank;
 
     }
 
@@ -54,15 +57,24 @@ public class InvestimentController : ControllerBase
         if (account == null)
             return NotFound("Conta não encontrada!");
 
+        var transation = new TransactionsBank(DateTime.Now, investmentDTO.Value, "Transação interna Investimento", account.Id, account.Id);
+          _transactionsBank.Save(transation);
+
+        if(transation.Id > 0)
+        {
+            account.Balance = account.Balance - transation.Amount;
+        }
+
         var bound = _boundRepository.GetById(investmentDTO.IdBound);        
          
         var dueDate = GetDueDate(bound.LiquidityType);
 
-        _investimentRepository.Save(new Investment(dueDate, investmentDTO.Value, bound, account));
+        var investiment = new Investment(dueDate, investmentDTO.Value, bound, account);
+         _investimentRepository.Save(investiment);
 
         var message = $"Valor investido com sucesso, disponivel para saque no dia {dueDate}" ;
 
-        return Ok(message);
+        return Ok(investiment);
     }
 
     private DateTime GetDueDate(LiquidityType liquidityType)
@@ -90,9 +102,28 @@ public class InvestimentController : ControllerBase
 
         var investments = _investimentRepository.GetInvestment(account.Id);
 
+        List<Bound> bounds = new List<Bound>();
+
+        investments.ForEach(investimento =>
+        {
+            Bound bound = _boundRepository.GetById(investimento.IdBound);
+
+            bound.Investments = null;
+            if (bound != null)
+            {
+                bounds.Add(bound);
+            }
+        });
+
+
         investments.ForEach(investment => investment.Account = null);
 
-        return Ok(investments);
+        for (int i = 0; i < investments.Count; i++)
+        {
+            investments[i].Bound = bounds.ElementAtOrDefault(i);
+        }
+
+        return Ok(  investments  );
     }
 
 }
