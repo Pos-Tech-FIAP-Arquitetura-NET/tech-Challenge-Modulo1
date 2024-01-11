@@ -21,6 +21,10 @@ export class UserService {
 
     return this.http.get<any>(`${this.baseUrl}user/retrieveUser`, this.options);
   }
+
+  saveUser(data : UserRequestInterface) {
+    return this.http.post<any>(`${this.baseUrl}user/saveUser`, data,this.options);
+  }
   changeUserEmail(email : string) {
     return this.http.post<any>(`${this.baseUrl}user/changeUserEmail`, email,this.options);
   }

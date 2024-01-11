@@ -5,16 +5,18 @@ import {GuardGuard} from "./guards/guard.guard";
 import {DashboardComponent} from "./pages/dashboard/dashboard/dashboard.component";
 import {LoginComponent} from "./components/login/login/login.component";
 import {CadastroComponent} from "./components/cadastro/cadastro/cadastro.component";
-import {AccountComponent} from "./components/account/account/account.component";
-import {DolarChartsComponent} from "./components/dolar-charts/dolar-charts.component";
+
 import {TitulosComponent} from "./components/titulos/titulos.component";
 import {MeusInvestimentosComponent} from "./components/meus-investimentos/meus-investimentos.component";
+
+import {LadingComponent} from "./components/lading/lading.component";
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
     children: [
+      { path: 'home', component: LadingComponent },
       { path: 'login', component: LoginComponent },
       { path: 'cadastro', component: CadastroComponent },
 

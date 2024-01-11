@@ -7,30 +7,31 @@ import {GeneralService} from "../../../services/generalService/general.service";
 
 @Component({
   selector: 'app-login',
-  template:`
-    <div class="container-main-login">
-
-            <img src="./../../../../assets/imagem.png">
-
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <h6>Login</h6>
-            <div>
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" id="email" formControlName="email" class="form-control">
-            </div>
-
-            <div>
-                <label for="password" class="form-label">Password:</label>
-                <input type="password" id="password" formControlName="password" class="form-control">
-            </div>
-
-            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-success"
-            style="background-color: var(--brand-color3); color: black">Entrar</button>
-        </form>
-    </div>
-
-
-  `,
+  // template:`
+  //   <div class="container-main-login">
+  //
+  //           <img src="./../../../../assets/imagem.png">
+  //
+  //       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  //           <h6>Login</h6>
+  //           <div>
+  //               <label for="email" class="form-label">Email:</label>
+  //               <input type="email" id="email" formControlName="email" class="form-control">
+  //           </div>
+  //
+  //           <div>
+  //               <label for="password" class="form-label">Password:</label>
+  //               <input type="password" id="password" formControlName="password" class="form-control">
+  //           </div>
+  //
+  //           <button type="submit" [disabled]="loginForm.invalid" class="btn btn-success"
+  //           style="background-color: var(--brand-color3); color: black">Entrar</button>
+  //       </form>
+  //   </div>
+  //
+  //
+  // `,
+  templateUrl:'login.component.html',
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements  OnInit{
@@ -38,6 +39,8 @@ export class LoginComponent implements  OnInit{
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
+
+
   ngOnInit() {
 
   }
@@ -58,10 +61,10 @@ export class LoginComponent implements  OnInit{
            this.generalService.showSuccess("Login efetuado com sucesso!")
           this.router.navigate(["/dashboard"]);
           }
-
         },
         (error) => {
-          console.error(error);
+          this.generalService.showError('Usuário ou senha inválidos')
+          console.error(error.message);
         });
     }
 

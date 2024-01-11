@@ -1,15 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {AccountService} from "../../services/account/account.service";
 import {InvestimentService} from "../../services/investment/investiment.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-investiment',
   template: `
       <div class="container-investiment">
           <label class="form-label" >Total Investido
-              <h3>R$ {{  total.toFixed(2) }}</h3>
+              <h3>{{  total.toFixed(2) | money}}</h3>
           </label>
-          <button>Ver todos ....</button>
+          <button (click)="rota()">Ver todos ....</button>
       </div>
   `
    ,
@@ -22,7 +23,9 @@ export class InvestimentComponent implements OnInit {
     this.getinvestmentInformation()
   }
 
-  constructor(private investmentService: InvestimentService) {
+  constructor(
+    private investmentService: InvestimentService,
+    private route: Router) {
   }
 
   getinvestmentInformation() {
@@ -30,5 +33,9 @@ export class InvestimentComponent implements OnInit {
       this.investment = data
       this.total = data.reduce((accumulator: any, investment: any) => accumulator + investment.value, 0);
     })
+  }
+
+  rota(){
+    this.route.navigate(['/dashboard/investimentos'])
   }
 }

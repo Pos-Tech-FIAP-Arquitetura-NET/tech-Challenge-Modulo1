@@ -79,7 +79,7 @@ public class UserController : ControllerBase
         {newAccount.AccountNumber}, Agencia {newAccount.Agency}";
 
         _logger.LogWarning(message);
-        return Ok(message);
+        return Ok(newUser);
     }
 
     /// <summary>

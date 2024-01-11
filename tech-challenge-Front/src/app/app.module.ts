@@ -28,6 +28,8 @@ import {provideToastr, ToastrModule} from "ngx-toastr";
 import { MeusInvestimentosComponent } from './components/meus-investimentos/meus-investimentos.component';
 import { ExtratoComponent } from './components/extrato/extrato.component';
 
+import { LadingComponent } from './components/lading/lading.component';
+
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { ExtratoComponent } from './components/extrato/extrato.component';
     ModalInvestirComponent,
     MeusInvestimentosComponent,
     ExtratoComponent,
+
+    LadingComponent,
 
   ],
     imports: [
