@@ -3,9 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Play_investe.Entity;
 using Play_investe.Entity;
 using System.Reflection.Emit;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Play_investe.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public class AccountConfiguration : IEntityTypeConfiguration<Account>
     {
         public void Configure(EntityTypeBuilder<Account> builder)

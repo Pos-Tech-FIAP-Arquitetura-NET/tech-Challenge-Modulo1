@@ -1,5 +1,6 @@
 ﻿using Play_investe.Enums;
 using Play_investe.Entity;
+using Play_investe.DTO;
 
 namespace Play_investe.Entity
 {
@@ -15,18 +16,18 @@ namespace Play_investe.Entity
     
 
         public Bound() { }
-        public Bound(LiquidityType liquidityType,  string index, float percent)
+        public Bound(SaveBoundDTO savebounDto)
         {
-            LiquidityType = liquidityType;
-            Index = index;
-            Percent = percent;                 
+            LiquidityType = savebounDto.LiquidityType;
+            Index = savebounDto.Index;
+            Percent = savebounDto.Percent;                 
             
-            if(liquidityType == 0)
+            if(savebounDto.LiquidityType == 0)
             {
                 AvailableForWithdrawal = true;
             }
 
-            if (index.Length > 0)
+            if (savebounDto.Index.Length > 0)
             {
                  Type = "Indexed Bound";
             }
@@ -37,6 +38,16 @@ namespace Play_investe.Entity
                    
            
            
+        }
+
+        public DateTime GetDueDate(LiquidityType liquidityType)
+        {
+            var aquisitionDay = DateTime.Now;
+            int diasLiquidez = (int)liquidityType;
+
+            var dueDate = aquisitionDay.AddDays(diasLiquidez);
+
+            return dueDate;
         }
 
     }

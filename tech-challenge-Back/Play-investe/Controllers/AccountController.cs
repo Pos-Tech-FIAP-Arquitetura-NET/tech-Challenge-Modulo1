@@ -8,9 +8,12 @@ using Play_investe.Interface;
 using UserTemplate.Services;
 using Play_investe.Repository;
 using System.Security.Claims;
+using Microsoft.Extensions.Configuration.UserSecrets;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Play_investe.Controllers
 {
+    [ExcludeFromCodeCoverage]
     [ApiController]
     [Route("account")]
     public class AccountController : ControllerBase
@@ -36,11 +39,12 @@ namespace Play_investe.Controllers
         /// <returns></returns>     
 
         [HttpPost("saveAccount")]
-        public IActionResult SaveAccount(SaveAccountDTO accountDTO)
+        public IActionResult SaveAccount(int userId)
         {
-            _accontRepository.Save(new Account());
+            var account = new Account(userId);
+            _accontRepository.Save(account);
 
-            var message = $"User {accountDTO.AccountNumber} created with sucess!";
+            var message = $"User {account.AccountNumber} created with sucess!";
             _logger.LogWarning(message);
             return Ok(message);
         }

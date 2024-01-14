@@ -30,15 +30,11 @@ namespace Play_investe.Entity
             IdBound = bound.Id;
             Bound = bound;
             Account = account;
-            UpdateAmount(value);
+            Amount = value;
 
         }
 
-        private void UpdateAmount(float value)
-        {            
-            Amount += value;
-        }
-
+        
        
 
 

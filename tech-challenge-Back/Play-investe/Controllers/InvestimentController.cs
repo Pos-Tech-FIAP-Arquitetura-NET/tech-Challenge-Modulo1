@@ -5,11 +5,12 @@ using Play_investe.Entity;
 using Play_investe.Enums;
 using Play_investe.Interface;
 using Play_investe.Repository;
+using System.Diagnostics.CodeAnalysis;
 using System.Security.Claims;
 
 namespace Play_investe.Controllers;
 
-
+[ExcludeFromCodeCoverage]
 [ApiController]
 [Route("investiment")]
 public class InvestimentController : ControllerBase
@@ -67,7 +68,7 @@ public class InvestimentController : ControllerBase
 
         var bound = _boundRepository.GetById(investmentDTO.IdBound);        
          
-        var dueDate = GetDueDate(bound.LiquidityType);
+        var dueDate = bound.GetDueDate(bound.LiquidityType);
 
         var investiment = new Investment(dueDate, investmentDTO.Value, bound, account);
          _investimentRepository.Save(investiment);
@@ -77,15 +78,7 @@ public class InvestimentController : ControllerBase
         return Ok(investiment);
     }
 
-    private DateTime GetDueDate(LiquidityType liquidityType)
-    {
-        var aquisitionDay = DateTime.Now;        
-        int diasLiquidez = (int)liquidityType;
-         
-        var dueDate = aquisitionDay.AddDays(diasLiquidez);
-
-        return dueDate;
-    }
+   
 
     [HttpGet("getInvestimentsInformation")]
     [Authorize]

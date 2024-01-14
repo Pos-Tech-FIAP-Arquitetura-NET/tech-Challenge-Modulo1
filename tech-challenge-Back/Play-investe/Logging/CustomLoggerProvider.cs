@@ -1,7 +1,9 @@
 ﻿using System.Collections.Concurrent;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Play_investe.Logging
 {
+    [ExcludeFromCodeCoverage]
     public class CustomLoggerProvider : ILoggerProvider
     {
         private readonly CustomLoggerProviderConfiguration _loggerConfig;

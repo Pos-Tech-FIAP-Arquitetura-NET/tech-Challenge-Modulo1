@@ -44,7 +44,20 @@ namespace Play_investe.Entity
             RG = saveUserDTO.RG;
             DateOfIssue = saveUserDTO.DateOfIssue;
             Password = passwordHasher.HashPassword(saveUserDTO.Password);
-            Permitions = saveUserDTO.Permitions;
+
+            switch (saveUserDTO.Permitions)
+            {
+                case PermitionsTypes.Admin:
+                    Permitions = PermitionsTypes.Admin;
+                    break;
+                case PermitionsTypes.Staff:
+                    Permitions = PermitionsTypes.Staff;
+                    break;
+                default:
+                    Permitions = PermitionsTypes.General;
+                    break;
+            }
+
             IsActived = true;      
                         
         }

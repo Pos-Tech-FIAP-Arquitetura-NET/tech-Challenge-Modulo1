@@ -2,10 +2,12 @@
 using Play_investe.DTO;
 using Play_investe.Interface;
 using Play_investe.Services;
+using System.Diagnostics.CodeAnalysis;
 using UserTemplate.Services;
 
 namespace Play_investe.Controllers
 {
+    [ExcludeFromCodeCoverage]
     [ApiController]
     [Route("login")]
     public class LoginController : ControllerBase

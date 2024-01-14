@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OW8sxtNhEyLpf9+fBVBdok67NcdwX8aVMPUBkgOqEEHlJbpkLddGfeHaCDIn1CXZdAaBOqYrTCvEWpjrKeYUGQ==",
+  "dgSpecHash": "260HYpfKZZ/OZJiF6u8Hboe+4OebHT4LDUydf3zXg3X3XnRaXh/06tyW0bKcg0Eh0g297WJRYdXf618sjRZBKg==",
   "success": true,
   "projectFilePath": "C:\\Users\\annek\\OneDrive\\Documentos\\ESTUDO\\FIAP\\Modulo 1\\tech-Challenge-Modulo1\\tech-challenge-Back\\Play-investe\\Play-investe.csproj",
   "expectedPackageFiles": [
@@ -55,7 +55,9 @@
     "C:\\Users\\annek\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\annek\\.nuget\\packages\\moq\\4.18.4\\moq.4.18.4.nupkg.sha512",
     "C:\\Users\\annek\\.nuget\\packages\\moq.automock\\3.5.0\\moq.automock.3.5.0.nupkg.sha512",
+    "C:\\Users\\annek\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\annek\\.nuget\\packages\\nonblocking\\2.1.1\\nonblocking.2.1.1.nupkg.sha512",
+    "C:\\Users\\annek\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
     "C:\\Users\\annek\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\annek\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\annek\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",

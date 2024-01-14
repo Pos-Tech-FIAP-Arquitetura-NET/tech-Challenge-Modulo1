@@ -4,6 +4,7 @@
 
 namespace Play_investe.Migrations
 {
+
     /// <inheritdoc />
     public partial class boundchanges : Migration
     {

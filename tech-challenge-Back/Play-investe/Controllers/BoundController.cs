@@ -4,10 +4,12 @@ using Play_investe.DTO;
 using Play_investe.Entity;
 using Play_investe.Enums;
 using Play_investe.Interface;
+using System.Diagnostics.CodeAnalysis;
 using UserTemplate.Services;
 
 namespace Play_investe.Controllers
 {
+    [ExcludeFromCodeCoverage]
     [ApiController]
     [Route("bound")]
     public class BoundController :ControllerBase
@@ -49,7 +51,7 @@ namespace Play_investe.Controllers
         public IActionResult SaveBound(SaveBoundDTO saveBoundDTO)
         {
                         
-           _boundRepository.Save(new Bound(saveBoundDTO.LiquidityType, saveBoundDTO.Index, saveBoundDTO.Percent));
+           _boundRepository.Save(new Bound(saveBoundDTO));
                     
             var message = $"Titulo criado com sucesso !";
             _logger.LogWarning(message);

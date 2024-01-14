@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Play_investe.Entity;
 using Play_investe.Interface;
+using System.Diagnostics.CodeAnalysis;
 using static Dapper.SqlMapper;
 
 namespace Play_investe.Repository
 {
+    [ExcludeFromCodeCoverage]
     public class EFRepository<T> : IRepository<T> where T : Entitys
     {
 

@@ -2,9 +2,11 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Play_investe.Entity;
 using Play_investe.Entity;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Play_investe.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {
         public void Configure(EntityTypeBuilder<User> builder)

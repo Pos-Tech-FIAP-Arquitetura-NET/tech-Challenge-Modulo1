@@ -4,7 +4,8 @@
     public enum PermitionsTypes
     {
         Admin = 1,
-        Staff = 2
+        Staff = 2,
+        General = 3
     }
 
     public static class Permitions

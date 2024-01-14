@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Play_investe.Migrations
 {
+
     /// <inheritdoc />
     public partial class tables : Migration
     {

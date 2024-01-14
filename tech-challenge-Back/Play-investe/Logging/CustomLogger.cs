@@ -1,5 +1,8 @@
-﻿namespace Play_investe.Logging
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Play_investe.Logging
 {
+    [ExcludeFromCodeCoverage]
     public class CustomLogger : ILogger
     {
         private string _loggerName;

@@ -13,7 +13,9 @@ using System.Reflection.Emit;
 using System.Security.Claims;
 using UserTemplate.Services;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Diagnostics.CodeAnalysis;
 
+[ExcludeFromCodeCoverage]
 [ApiController]
 [Route("user")]
 public class UserController : ControllerBase
@@ -39,7 +41,7 @@ public class UserController : ControllerBase
         _addressRepository = addressRepository;
     }
 
-    
+
 
     /// <summary>
     /// Cria um novo usuário.
@@ -65,7 +67,7 @@ public class UserController : ControllerBase
         _accontRepository.Save(newAccount);
 
         var newAddress = new Address(
-                                userDTO.Street, 
+                                userDTO.Street,
                                 userDTO.Number,
                                 userDTO.ZipCode,
                                 userDTO.City,
@@ -97,7 +99,7 @@ public class UserController : ControllerBase
         return Ok(_userRepository.GetAll());
     }
 
-     
+
 
 
     /// <summary>
@@ -109,18 +111,18 @@ public class UserController : ControllerBase
     /// <response code="401"> Não Autenticado</response>
     /// <response code="403"> Ñão Autorizado</response>
     /// <response code="404"> Usuário não encontrado</response>
-    [Authorize]   
+    [Authorize]
     [HttpGet("getUserById/{id}")]
     public IActionResult GetUserById(int id)
     {
         var user = _userRepository.GetById(id);
 
-        if(user == null) 
+        if (user == null)
             return NotFound("Usuário não encontrado!");
 
         return Ok(user);
     }
-        
+
 
     /// <summary>
     /// Modifica email do usuário, método necessita de autenticação.
@@ -142,15 +144,15 @@ public class UserController : ControllerBase
             return NotFound("Usuário não encontrado!");
         }
         else
-        {                        
+        {
             user.Email = newEmail;
             user.UpdatedDate = DateTime.Now;
             _userRepository.Put(user);
 
             return Ok("Usuario alterado com sucesso");
-        }               
+        }
 
-      
+
     }
 
     /// <summary>
@@ -195,10 +197,10 @@ public class UserController : ControllerBase
     {
         var userEmail = HttpContext.User.FindFirst(ClaimTypes.Email)?.Value;
 
-        var user = _userRepository.GetUserByEmail(userEmail);        
+        var user = _userRepository.GetUserByEmail(userEmail);
 
         return Ok(user);
-         
+
     }
 
     /// <summary>
@@ -214,19 +216,19 @@ public class UserController : ControllerBase
     [Authorize(Roles = Permitions.Admin)]
     [HttpDelete("deleteUser/{id}")]
     public IActionResult DeleteUser(int id)
-    {        
+    {
 
         var user = _userRepository.GetById(id);
 
         if (user == null)
         {
             return NotFound("Usuário não encontrado!");
-        }           
+        }
         else
         {
             _userRepository.Delete(id);
             return Ok("Usuario deletado com sucesso");
-        }       
+        }
     }
 
     /// <summary>
@@ -237,7 +239,7 @@ public class UserController : ControllerBase
     /// <response code="200"> Retonar Sucesso</response>
     /// <response code="401"> Não Autenticado</response>
     /// <response code="404"> Usuário não encontrado</response>
-    [Authorize]    
+    [Authorize]
     [HttpDelete("desactiveUser")]
     public IActionResult DesactiveUser()
     {

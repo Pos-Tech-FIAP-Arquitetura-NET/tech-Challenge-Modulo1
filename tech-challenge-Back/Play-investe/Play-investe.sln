@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Play-investe", "Play-investe.csproj", "{513E0DED-7106-4AD7-9E99-F17F3E190CCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Play-investe", "Play-investe.csproj", "{513E0DED-7106-4AD7-9E99-F17F3E190CCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Play-Teste", "..\Play-Teste\Play-Teste.csproj", "{63A2617E-9DFF-4549-96F0-6DF073ABB709}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D6203700-8496-4798-BDFE-3ABDF1BD0638}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,10 @@ Global
 		{513E0DED-7106-4AD7-9E99-F17F3E190CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{513E0DED-7106-4AD7-9E99-F17F3E190CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{513E0DED-7106-4AD7-9E99-F17F3E190CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63A2617E-9DFF-4549-96F0-6DF073ABB709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63A2617E-9DFF-4549-96F0-6DF073ABB709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63A2617E-9DFF-4549-96F0-6DF073ABB709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63A2617E-9DFF-4549-96F0-6DF073ABB709}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

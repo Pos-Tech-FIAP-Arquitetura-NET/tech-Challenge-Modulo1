@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Play_investe.Entity;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Play_investe.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public class AddressConfiguration : IEntityTypeConfiguration<Address>
     {
         public void Configure(EntityTypeBuilder<Address> builder)

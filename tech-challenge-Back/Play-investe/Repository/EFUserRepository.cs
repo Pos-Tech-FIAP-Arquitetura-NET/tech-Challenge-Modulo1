@@ -3,11 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using Play_investe.Entity;
 using Play_investe.Interface;
 using Play_investe.Services;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UserTemplate.Services;
 
 namespace Play_investe.Repository
 {
+    [ExcludeFromCodeCoverage]
     public class EFUserRepository : EFRepository<User>, IUserRepository
     {
         private readonly PasswordHasherService _passwordHasher;

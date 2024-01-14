@@ -4,9 +4,11 @@ using Play_investe.Entity;
 using Play_investe.Interface;
 using Play_investe.Repository;
 using UserTemplate.Services;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Play_investe.Repository
 {
+    [ExcludeFromCodeCoverage]
     public class EFAccountRepository : EFRepository<Account>, IAccountRepository
     {
         public EFAccountRepository(ApplicationDbContext context) : base(context)

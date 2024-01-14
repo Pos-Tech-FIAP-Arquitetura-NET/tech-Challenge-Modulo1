@@ -80,3 +80,4 @@ C:\Users\annek\OneDrive\Documentos\ESTUDO\FIAP\Modulo 1\tech-Challenge-Modulo1\t
 C:\Users\annek\OneDrive\Documentos\ESTUDO\FIAP\Modulo 1\tech-Challenge-Modulo1\tech-challenge-Back\Play-investe\obj\Debug\net7.0\Play-investe.pdb
 C:\Users\annek\OneDrive\Documentos\ESTUDO\FIAP\Modulo 1\tech-Challenge-Modulo1\tech-challenge-Back\Play-investe\obj\Debug\net7.0\Play-investe.genruntimeconfig.cache
 C:\Users\annek\OneDrive\Documentos\ESTUDO\FIAP\Modulo 1\tech-Challenge-Modulo1\tech-challenge-Back\Play-investe\obj\Debug\net7.0\ref\Play-investe.dll
+C:\Users\annek\OneDrive\Documentos\ESTUDO\FIAP\Modulo 1\tech-Challenge-Modulo1\tech-challenge-Back\Play-investe\bin\Debug\net7.0\nunit.framework.dll

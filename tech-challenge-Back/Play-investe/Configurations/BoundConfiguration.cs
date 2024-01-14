@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using Play_investe.Entity;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Play_investe.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public class BoundConfiguration : IEntityTypeConfiguration<Bound>
     {
         public void Configure(EntityTypeBuilder<Bound> builder)

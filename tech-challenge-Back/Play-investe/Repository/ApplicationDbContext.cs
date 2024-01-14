@@ -3,9 +3,11 @@ using Play_investe.Entity;
 using Play_investe.Configurations;
 using Play_investe.Entity;
 using System.Transactions;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Play_investe.Repository
 {
+    [ExcludeFromCodeCoverage]
     public class ApplicationDbContext : DbContext
     {
         private readonly IConfiguration _configuration;

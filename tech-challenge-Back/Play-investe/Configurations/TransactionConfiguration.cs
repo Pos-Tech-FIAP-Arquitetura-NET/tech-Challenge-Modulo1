@@ -2,9 +2,11 @@
 using Microsoft.EntityFrameworkCore;
  
 using Play_investe.Entity;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Play_investe.Configurations
 {
+    [ExcludeFromCodeCoverage]
     public class TransactionConfiguration : IEntityTypeConfiguration<TransactionsBank>
     {
         public void Configure(EntityTypeBuilder<Entity.TransactionsBank> builder)
